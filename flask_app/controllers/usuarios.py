@@ -1,23 +1,13 @@
 from flask import render_template, request, redirect, session, flash
 from flask_app import app, bcrypt
 from flask_app.models.usuario import Usuario
-from flask_app.models.pelicula import Pelicula 
-from datetime import date
+
 
 
 @app.route("/") # 1 Ruta para el index
 def index():
     return render_template("index.html")
 
-@app.route("/dashboard") # 2 Ruta para el dashboard
-def dashboard():
-    peliculas = Pelicula.get_all() 
-    usuario = Usuario.get_by_id(session['usuario_id'])
-    return render_template(
-        "dashboard.html",
-        peliculas=peliculas, 
-        usuario=usuario
-    )
 
 @app.route('/register', methods=['POST']) # Ruta para registrar un usuario
 def crear_usuario():
@@ -25,7 +15,7 @@ def crear_usuario():
         'nombre': request.form['name'],
         'apellido': request.form['apellido'],
         'email': request.form['email'],
-        'password': request.form['password'],
+        'password': request.form['password'], 
         'confirmPassword': request.form['confirmPassword']
     }
     if not Usuario.validar_usuario(data):

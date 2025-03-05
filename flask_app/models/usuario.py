@@ -6,7 +6,7 @@ EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 NOMBRE_REGEX = re.compile(r'^[a-zA-Z\s]+$')
 PASSWORD_REGEX = re.compile(r'^(?=.{8,})(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$')
 
-DATABASE = 'cinePedia'
+DATABASE = 'alljobs'
 
 class Usuario:
     def __init__(self, data):
