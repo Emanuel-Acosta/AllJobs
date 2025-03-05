@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+venv/
+# Ignorar todos los archivos .pem
+*.pem
+# Ignorar todos los archivos .key
+*.key
